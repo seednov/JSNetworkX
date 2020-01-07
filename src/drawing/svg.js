@@ -318,7 +318,7 @@ export function draw(G, config, optBind) {
   // scale the width of the edge according to the weight
   if (weighted && config.weightedStroke) {
     var maxWeight = 1;
-    for (let {u,v,data} of G.edgesIter(null, true)) {
+    for (let [u,v,data] of G.edgesIter(null, true)) {
       let weight = weightFunc({data});
       if (weight > maxWeight) {
         maxWeight = weight;
